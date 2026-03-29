@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サービス詳細 | 港栄産業株式会社</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;color:#1a1a1a;background:#fff;font-size:15px;line-height:1.7}
+a{text-decoration:none;color:inherit}
+nav{background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo .bar{width:4px;height:32px;background:#C8960A}
+.nav-logo span{font-size:16px;font-weight:700;color:#fff;letter-spacing:.08em}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:13px;color:#CBD5E1;letter-spacing:.04em;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:#C8960A}
+.nav-cta{background:#C8960A;color:#fff;padding:8px 20px;font-size:13px;font-weight:700;letter-spacing:.04em}
+
+.page-hero{background:#0A1628;padding:4rem 3rem 3.5rem;position:relative;overflow:hidden}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C8960A,#E8B420,#C8960A)}
+.breadcrumb{font-size:.8rem;color:#475569;margin-bottom:1rem;letter-spacing:.04em}
+.breadcrumb a{color:#64748B}
+.breadcrumb span{color:#C8960A;margin:0 6px}
+.page-hero h1{font-size:2.2rem;font-weight:800;color:#fff;letter-spacing:.02em;margin-bottom:.6rem}
+.page-hero p{font-size:.93rem;color:#94A3B8;max-width:560px;line-height:1.8}
+
+section{padding:4.5rem 3rem}
+.inner{max-width:1020px;margin:0 auto}
+.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:.6rem}
+.eyebrow::before{content:'';display:block;width:24px;height:2px;background:#C8960A}
+.eyebrow span{font-size:11px;color:#C8960A;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+.sec-title{font-size:1.7rem;font-weight:800;color:#0A1628;margin-bottom:.4rem}
+.sec-sub{font-size:.9rem;color:#64748B;line-height:1.8;margin-bottom:2.5rem}
+
+.sv-block{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid #E2E8F0}
+.sv-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.sv-block.reverse{direction:rtl}
+.sv-block.reverse>*{direction:ltr}
+.sv-visual{background:#0A1628;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.sv-visual-icon{font-size:3.5rem}
+.sv-visual-label{font-size:.8rem;color:#C8960A;font-weight:700;letter-spacing:.1em}
+.sv-num{font-size:.75rem;font-weight:800;color:#C8960A;letter-spacing:.1em;margin-bottom:.8rem}
+.sv-line{width:24px;height:2px;background:#C8960A;margin-bottom:.8rem}
+.sv-title{font-size:1.4rem;font-weight:800;color:#0A1628;margin-bottom:.8rem}
+.sv-desc{font-size:.9rem;color:#444;line-height:1.9;margin-bottom:1.2rem}
+.sv-features{display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem}
+.svf{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:#334155}
+.svf::before{content:'';display:block;width:6px;height:6px;background:#C8960A;margin-top:7px;flex-shrink:0}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:.75rem;font-weight:700;color:#C8960A;border:1px solid #C8960A;padding:3px 10px;letter-spacing:.04em}
+
+.flow-section{background:#F8F9FB}
+.flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:2.5rem;position:relative}
+.flow-grid::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:2px;background:#E2E8F0;z-index:0}
+.flow-item{text-align:center;position:relative;z-index:1}
+.flow-num{width:56px;height:56px;background:#0A1628;color:#C8960A;font-size:.85rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;border:2px solid #C8960A}
+.flow-title{font-size:.85rem;font-weight:700;color:#0A1628;margin-bottom:.4rem}
+.flow-desc{font-size:.78rem;color:#64748B;line-height:1.6;padding:0 .5rem}
+
+.cta-band{background:#0A1628;padding:3.5rem 3rem;text-align:center}
+.cta-band h2{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.6rem}
+.cta-band p{color:#94A3B8;font-size:.92rem;margin-bottom:2rem}
+.btn-gold{display:inline-block;background:#C8960A;color:#fff;padding:13px 32px;font-size:14px;font-weight:700;letter-spacing:.06em;transition:background .2s}
+.btn-gold:hover{background:#A87808}
+
+footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.f-logo{display:flex;align-items:center;gap:10px}
+.f-bar{width:3px;height:22px;background:#C8960A}
+.f-name{font-size:14px;font-weight:700;color:#fff;letter-spacing:.06em}
+
+@media(max-width:768px){
+  .sv-block,.sv-block.reverse{grid-template-columns:1fr;direction:ltr}
+  .flow-grid{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .flow-grid::before{display:none}
+  nav .nav-links{display:none}
+  section{padding:3rem 1.5rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo"><div class="bar"></div><span>港栄産業株式会社</span></div>
+  <div class="nav-links">
+    <a href="service.html" class="active">サービス</a>
+    <a href="company.html">会社概要</a>
+    <a href="recruit.html">採用情報</a>
+    <a href="contact.html" class="nav-cta">お問い合わせ</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">ホーム</a><span>›</span>サービス詳細</div>
+  <h1>サービス詳細</h1>
+  <p>港栄産業が提供する輸送・物流サービスをご紹介します。お客様のビジネスを支える多彩なソリューションをご用意しています。</p>
+</div>
+
+<section>
+  <div class="inner">
+    <div class="sv-block">
+      <div class="sv-visual"><div class="sv-visual-icon">🚛</div><div class="sv-visual-label">General Cargo</div></div>
+      <div>
+        <div class="sv-num">SERVICE 01</div>
+        <div class="sv-line"></div>
+        <div class="sv-title">一般貨物輸送</div>
+        <div class="sv-desc">大型・中型・小型トラックを駆使した一般貨物輸送サービスです。姫路市内はもちろん、近畿圏・全国各地への輸送に対応しています。積み荷の種類や量に応じて最適な車両をご提案します。</div>
+        <div class="sv-features">
+          <div class="svf">大型・中型・小型トラック完備、荷物の規模に応じた柔軟な対応</div>
+          <div class="svf">近畿圏から全国への幹線輸送・地域内配送</div>
+          <div class="svf">定期便・不定期便どちらにも対応</div>
+          <div class="svf">丁寧な積み下ろしと確実な配送管理</div>
+        </div>
+        <div class="tag-row"><div class="tag">幹線輸送</div><div class="tag">地域輸送</div><div class="tag">定期便</div></div>
+      </div>
+    </div>
+
+    <div class="sv-block reverse">
+      <div class="sv-visual"><div class="sv-visual-icon">📦</div><div class="sv-visual-label">Charter / Spot</div></div>
+      <div>
+        <div class="sv-num">SERVICE 02</div>
+        <div class="sv-line"></div>
+        <div class="sv-title">チャーター便・スポット輸送</div>
+        <div class="sv-desc">急ぎの配送や単発のスポット輸送に迅速対応します。お客様のスケジュールを最優先に、機動力を活かして対応。突発的な輸送ニーズにも柔軟に応えます。</div>
+        <div class="sv-features">
+          <div class="svf">即日・翌日対応など急ぎのご依頼に柔軟に対応</div>
+          <div class="svf">専用チャーター便による確実な輸送</div>
+          <div class="svf">時間指定・納品日指定にも対応</div>
+          <div class="svf">24時間体制でのご相談受付</div>
+        </div>
+        <div class="tag-row"><div class="tag">スポット対応</div><div class="tag">緊急輸送</div><div class="tag">時間指定</div></div>
+      </div>
+    </div>
+
+    <div class="sv-block">
+      <div class="sv-visual"><div class="sv-visual-icon">🏭</div><div class="sv-visual-label">Industrial Logistics</div></div>
+      <div>
+        <div class="sv-num">SERVICE 03</div>
+        <div class="sv-line"></div>
+        <div class="sv-title">工場・産業向け定期輸送</div>
+        <div class="sv-desc">製造業・工場の部品・製品輸送を定期的にサポートします。安定したサプライチェーンの維持に貢献し、生産ラインを止めない信頼性の高い輸送体制を構築します。</div>
+        <div class="sv-features">
+          <div class="svf">工場間・拠点間の定期輸送に対応</div>
+          <div class="svf">生産スケジュールに合わせた精密なダイヤ管理</div>
+          <div class="svf">製造業特有の特殊貨物・精密機器にも対応</div>
+          <div class="svf">専任担当者によるきめ細かいサポート</div>
+        </div>
+        <div class="tag-row"><div class="tag">定期便</div><div class="tag">産業物流</div><div class="tag">製造業対応</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flow-section">
+  <div class="inner">
+    <div class="eyebrow"><span>Flow</span></div>
+    <h2 class="sec-title">ご依頼の流れ</h2>
+    <p class="sec-sub">お問い合わせから配送完了まで、スムーズにご対応します。</p>
+    <div class="flow-grid">
+      <div class="flow-item"><div class="flow-num">01</div><div class="flow-title">お問い合わせ</div><div class="flow-desc">電話・メールにてお気軽にご連絡ください</div></div>
+      <div class="flow-item"><div class="flow-num">02</div><div class="flow-title">ヒアリング</div><div class="flow-desc">輸送内容・日程・荷物の詳細をお聞きします</div></div>
+      <div class="flow-item"><div class="flow-num">03</div><div class="flow-title">お見積もり</div><div class="flow-desc">最適なプランと費用をご提案します</div></div>
+      <div class="flow-item"><div class="flow-num">04</div><div class="flow-title">輸送実施</div><div class="flow-desc">安全・確実に荷物をお届けします</div></div>
+      <div class="flow-item"><div class="flow-num">05</div><div class="flow-title">完了・報告</div><div class="flow-desc">配送完了をご報告。継続のご相談も承ります</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>輸送に関するご質問・お見積もりは無料です。専任スタッフが丁寧にご対応いたします。</p>
+  <a href="contact.html" class="btn-gold">お問い合わせ・お見積もり</a>
+</div>
+
+<footer>
+  <div class="f-logo"><div class="f-bar"></div><span class="f-name">港栄産業株式会社</span></div>
+  <div style="font-size:.8rem">© 2025 港栄産業株式会社. All rights reserved.</div>
+</footer>
+</body>
+</html>

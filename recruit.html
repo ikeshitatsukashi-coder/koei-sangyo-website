@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用情報 | 港栄産業株式会社</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;color:#1a1a1a;background:#fff;font-size:15px;line-height:1.7}
+a{text-decoration:none;color:inherit}
+nav{background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo .bar{width:4px;height:32px;background:#C8960A}
+.nav-logo span{font-size:16px;font-weight:700;color:#fff;letter-spacing:.08em}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:13px;color:#CBD5E1;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:#C8960A}
+.nav-cta{background:#C8960A;color:#fff;padding:8px 20px;font-size:13px;font-weight:700}
+
+.page-hero{background:#0A1628;padding:4rem 3rem 3.5rem;position:relative;overflow:hidden}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C8960A,#E8B420,#C8960A)}
+.breadcrumb{font-size:.8rem;color:#475569;margin-bottom:1rem}
+.breadcrumb a{color:#64748B}
+.breadcrumb span{color:#C8960A;margin:0 6px}
+.page-hero h1{font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:.6rem}
+.page-hero p{font-size:.93rem;color:#94A3B8;max-width:560px;line-height:1.8}
+
+section{padding:4.5rem 3rem}
+.inner{max-width:960px;margin:0 auto}
+.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:.6rem}
+.eyebrow::before{content:'';display:block;width:24px;height:2px;background:#C8960A}
+.eyebrow span{font-size:11px;color:#C8960A;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+.sec-title{font-size:1.7rem;font-weight:800;color:#0A1628;margin-bottom:.4rem}
+.sec-sub{font-size:.9rem;color:#64748B;line-height:1.8}
+
+/* Message */
+.message-section{background:#0A1628;padding:4.5rem 3rem}
+.message-inner{max-width:800px;margin:0 auto;display:grid;grid-template-columns:180px 1fr;gap:3rem;align-items:start}
+.msg-avatar{background:#112240;border:2px solid #C8960A;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem}
+.msg-avatar-icon{font-size:3rem}
+.msg-avatar-name{font-size:.78rem;color:#C8960A;font-weight:700;letter-spacing:.06em;text-align:center}
+.msg-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:.6rem}
+.msg-eyebrow::before{content:'';display:block;width:24px;height:2px;background:#C8960A}
+.msg-eyebrow span{font-size:11px;color:#C8960A;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+.msg-title{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:1rem}
+.msg-text{font-size:.9rem;color:#94A3B8;line-height:1.9}
+
+/* Points */
+.points-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2.5rem}
+.point-card{border:1px solid #E2E8F0;padding:1.8rem;border-top:3px solid #C8960A}
+.point-icon{font-size:2rem;margin-bottom:.8rem}
+.point-title{font-size:1rem;font-weight:700;color:#0A1628;margin-bottom:.5rem}
+.point-desc{font-size:.87rem;color:#64748B;line-height:1.8}
+
+/* Jobs */
+.jobs-section{background:#F8F9FB}
+.job-card{background:#fff;border:1px solid #E2E8F0;margin-bottom:1.5rem}
+.job-head{background:#0A1628;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.job-title{font-size:1rem;font-weight:700;color:#fff}
+.job-type{font-size:.75rem;font-weight:700;color:#C8960A;border:1px solid #C8960A;padding:3px 10px;letter-spacing:.04em}
+.job-body{padding:1.5rem}
+.job-table{width:100%;border-collapse:collapse}
+.job-table tr{border-bottom:1px solid #F1F5F9}
+.job-table th{width:140px;padding:12px 16px;font-size:.85rem;font-weight:700;color:#64748B;text-align:left;vertical-align:top}
+.job-table td{padding:12px 16px;font-size:.88rem;color:#334155;line-height:1.7}
+
+/* Flow */
+.flow-list{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2.5rem;position:relative}
+.flow-list::before{content:'';position:absolute;top:24px;left:12%;right:12%;height:2px;background:#E2E8F0;z-index:0}
+.fl-item{text-align:center;position:relative;z-index:1}
+.fl-num{width:48px;height:48px;background:#0A1628;color:#C8960A;font-size:.82rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem;border:2px solid #C8960A}
+.fl-title{font-size:.85rem;font-weight:700;color:#0A1628;margin-bottom:.3rem}
+.fl-desc{font-size:.78rem;color:#64748B;line-height:1.5;padding:0 .3rem}
+
+.cta-band{background:#0A1628;padding:3.5rem 3rem;text-align:center}
+.cta-band h2{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.6rem}
+.cta-band p{color:#94A3B8;font-size:.92rem;margin-bottom:2rem}
+.btn-gold{display:inline-block;background:#C8960A;color:#fff;padding:13px 32px;font-size:14px;font-weight:700;letter-spacing:.06em}
+.btn-gold:hover{background:#A87808}
+
+footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.f-logo{display:flex;align-items:center;gap:10px}
+.f-bar{width:3px;height:22px;background:#C8960A}
+.f-name{font-size:14px;font-weight:700;color:#fff}
+
+@media(max-width:768px){
+  .message-inner,.points-grid{grid-template-columns:1fr}
+  .flow-list{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .flow-list::before{display:none}
+  nav .nav-links{display:none}
+  section{padding:3rem 1.5rem}
+  .job-table th{width:100px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo"><div class="bar"></div><span>港栄産業株式会社</span></div>
+  <div class="nav-links">
+    <a href="service.html">サービス</a>
+    <a href="company.html">会社概要</a>
+    <a href="recruit.html" class="active">採用情報</a>
+    <a href="contact.html" class="nav-cta">お問い合わせ</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">ホーム</a><span>›</span>採用情報</div>
+  <h1>採用情報</h1>
+  <p>港栄産業では、共に地域の物流を支えてくれる仲間を募集しています。安心して長く働ける環境をご用意しています。</p>
+</div>
+
+<!-- Message -->
+<div class="message-section">
+  <div class="message-inner">
+    <div class="msg-avatar">
+      <div class="msg-avatar-icon">👤</div>
+      <div class="msg-avatar-name">代表取締役<br>〇〇 〇〇</div>
+    </div>
+    <div>
+      <div class="msg-eyebrow"><span>Message</span></div>
+      <div class="msg-title">共に、姫路の物流を支えませんか。</div>
+      <div class="msg-text">港栄産業は、姫路の産業と暮らしを陰から支える物流会社です。私たちが目指しているのは、スタッフ一人ひとりが誇りを持って働ける職場。安全・誠実・貢献という理念のもと、長く活躍できる環境を整えています。未経験の方でも丁寧にサポートしますので、ぜひお気軽にご応募ください。</div>
+    </div>
+  </div>
+</div>
+
+<!-- Working Points -->
+<section>
+  <div class="inner">
+    <div class="eyebrow"><span>Why Join Us</span></div>
+    <h2 class="sec-title">港栄産業で働く魅力</h2>
+    <div class="points-grid">
+      <div class="point-card">
+        <div class="point-icon">🛡️</div>
+        <div class="point-title">充実した福利厚生</div>
+        <div class="point-desc">社会保険完備・各種手当・有給休暇制度など、安心して長く働ける環境を整えています。</div>
+      </div>
+      <div class="point-card">
+        <div class="point-icon">📚</div>
+        <div class="point-title">充実の研修制度</div>
+        <div class="point-desc">未経験者でも安心。先輩ドライバーによる丁寧な指導と、定期的な安全研修を実施しています。</div>
+      </div>
+      <div class="point-card">
+        <div class="point-icon">📈</div>
+        <div class="point-title">明確なキャリアパス</div>
+        <div class="point-desc">経験・資格に応じた昇給制度。大型免許取得支援など、スキルアップをサポートします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Jobs -->
+<section class="jobs-section">
+  <div class="inner">
+    <div class="eyebrow"><span>Openings</span></div>
+    <h2 class="sec-title">募集職種</h2>
+    <p class="sec-sub" style="margin-bottom:2rem">現在、以下の職種を募集しています。</p>
+
+    <div class="job-card">
+      <div class="job-head">
+        <div class="job-title">大型トラックドライバー</div>
+        <div class="job-type">正社員</div>
+      </div>
+      <div class="job-body">
+        <table class="job-table">
+          <tr><th>仕事内容</th><td>大型トラックを使用した一般貨物の輸送業務（近畿圏・全国）</td></tr>
+          <tr><th>応募資格</th><td>大型自動車第一種免許（AT限定不可）<br>フォークリフト免許あれば尚可</td></tr>
+          <tr><th>勤務地</th><td>兵庫県姫路市（出発・帰着）</td></tr>
+          <tr><th>勤務時間</th><td>シフト制（詳細は面接時にご説明）</td></tr>
+          <tr><th>給与</th><td>月給 XXX,000円〜（経験・能力による）＋各種手当</td></tr>
+          <tr><th>休日・休暇</th><td>週休2日制（シフト制）、有給休暇、年末年始休暇</td></tr>
+          <tr><th>待遇・福利厚生</th><td>社会保険完備、交通費支給、制服貸与、食事補助</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-head">
+        <div class="job-title">中型・小型トラックドライバー</div>
+        <div class="job-type">正社員 / パート</div>
+      </div>
+      <div class="job-body">
+        <table class="job-table">
+          <tr><th>仕事内容</th><td>中型・小型トラックによる地域内配送・スポット輸送業務</td></tr>
+          <tr><th>応募資格</th><td>普通自動車第一種免許（AT限定不可）<br>中型免許歓迎・未経験者可</td></tr>
+          <tr><th>勤務地</th><td>兵庫県姫路市内・近郊</td></tr>
+          <tr><th>勤務時間</th><td>8:00〜18:00（実働8時間）相談可</td></tr>
+          <tr><th>給与</th><td>月給 XX,000円〜／時給 X,XXX円〜（パート）</td></tr>
+          <tr><th>休日・休暇</th><td>週休2日、有給休暇</td></tr>
+          <tr><th>待遇・福利厚生</th><td>社会保険完備（正社員）、交通費支給、制服貸与</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Flow -->
+<section>
+  <div class="inner">
+    <div class="eyebrow"><span>Application Flow</span></div>
+    <h2 class="sec-title">応募から入社までの流れ</h2>
+    <div class="flow-list">
+      <div class="fl-item"><div class="fl-num">01</div><div class="fl-title">応募</div><div class="fl-desc">電話またはメールでご応募ください</div></div>
+      <div class="fl-item"><div class="fl-num">02</div><div class="fl-title">書類選考</div><div class="fl-desc">履歴書・職務経歴書を審査（約1週間）</div></div>
+      <div class="fl-item"><div class="fl-num">03</div><div class="fl-title">面接</div><div class="fl-desc">担当者との面接（1〜2回）</div></div>
+      <div class="fl-item"><div class="fl-num">04</div><div class="fl-title">内定・入社</div><div class="fl-desc">条件確認後、入社日を決定します</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>まずはお気軽にご連絡ください</h2>
+  <p>応募に関するご質問もお気軽にどうぞ。お電話・メールで受け付けています。</p>
+  <a href="contact.html" class="btn-gold">採用に応募する</a>
+</div>
+
+<footer>
+  <div class="f-logo"><div class="f-bar"></div><span class="f-name">港栄産業株式会社</span></div>
+  <div style="font-size:.8rem">© 2025 港栄産業株式会社. All rights reserved.</div>
+</footer>
+</body>
+</html>
