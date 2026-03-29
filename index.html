@@ -22,10 +22,11 @@ nav{position:sticky;top:0;z-index:100;background:#0A1628;display:flex;align-item
 
 /* HERO */
 .hero{background:#0A1628;padding:6rem 3rem 5rem;position:relative;overflow:hidden}
-.hero-bg-lines{position:absolute;inset:0;opacity:.06}
-.hero-accent{position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,transparent 40%,#1a2d4a 100%)}
-.hero-stripe{position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#C8960A 0%,#E8B420 50%,#C8960A 100%)}
-.hero-inner{position:relative;z-index:1;max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:rgba(6,15,30,0.62);z-index:1}
+.hero-accent{position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(26,45,74,0.5) 100%);z-index:2}
+.hero-stripe{position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#C8960A 0%,#E8B420 50%,#C8960A 100%);z-index:2}
+.hero-inner{position:relative;z-index:3;max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem}
 .hero-eyebrow span{font-size:11px;color:#C8960A;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
 .hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:#C8960A}
@@ -177,15 +178,10 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
   <a href="contact.html">お問い合わせ</a>
 </div>
 
-<!-- VIDEO -->
-<div class="video-section">
-  <div class="video-wrapper">
-    <video src="TOPムービー.mp4" autoplay muted loop playsinline></video>
-  </div>
-</div>
-
 <!-- HERO -->
 <div class="hero">
+  <video class="hero-video" src="TOPムービー.mp4" autoplay muted loop playsinline></video>
+  <div class="hero-overlay"></div>
   <div class="hero-accent"></div>
   <div class="hero-stripe"></div>
   <div class="hero-inner">
