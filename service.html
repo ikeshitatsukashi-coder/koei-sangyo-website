@@ -37,9 +37,8 @@ section{padding:4.5rem 3rem}
 .sv-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
 .sv-block.reverse{direction:rtl}
 .sv-block.reverse>*{direction:ltr}
-.sv-visual{background:#0A1628;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
-.sv-visual-icon{font-size:3.5rem}
-.sv-visual-label{font-size:.8rem;color:#C8960A;font-weight:700;letter-spacing:.1em}
+.sv-visual{background:#0A1628;aspect-ratio:4/3;overflow:hidden}
+.sv-visual img{width:100%;height:100%;object-fit:cover;display:block}
 .sv-num{font-size:.75rem;font-weight:800;color:#C8960A;letter-spacing:.1em;margin-bottom:.8rem}
 .sv-line{width:24px;height:2px;background:#C8960A;margin-bottom:.8rem}
 .sv-title{font-size:1.4rem;font-weight:800;color:#0A1628;margin-bottom:.8rem}
@@ -116,7 +115,7 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
 <section>
   <div class="inner">
     <div class="sv-block">
-      <div class="sv-visual"><div class="sv-visual-icon">🏢</div><div class="sv-visual-label">Outsourcing</div></div>
+      <div class="sv-visual"><img src="アウトソーシング.jpeg" alt="アウトソーシング"></div>
       <div>
         <div class="sv-num">SERVICE 01</div>
         <div class="sv-line"></div>
@@ -133,7 +132,7 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
     </div>
 
     <div class="sv-block reverse">
-      <div class="sv-visual"><div class="sv-visual-icon">🏭</div><div class="sv-visual-label">Factory / Warehouse</div></div>
+      <div class="sv-visual"><img src="工場・物流倉庫業務請負.jpeg" alt="工場・物流倉庫業務請負"></div>
       <div>
         <div class="sv-num">SERVICE 02</div>
         <div class="sv-line"></div>
@@ -150,7 +149,7 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
     </div>
 
     <div class="sv-block">
-      <div class="sv-visual"><div class="sv-visual-icon">⚙️</div><div class="sv-visual-label">Manufacturing Support</div></div>
+      <div class="sv-visual"><img src="製造補助・倉庫内軽作業・一般作業.jpeg" alt="製造補助・倉庫内軽作業・一般作業"></div>
       <div>
         <div class="sv-num">SERVICE 03</div>
         <div class="sv-line"></div>
