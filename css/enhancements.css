@@ -1,0 +1,208 @@
+/* ============================================
+   ENHANCEMENTS — 株式会社港栄産業
+   ============================================ */
+
+html { scroll-behavior: smooth; }
+
+/* ---- Scroll Reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
+}
+.reveal.in, .reveal-left.in, .reveal-right.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays */
+.d1 { transition-delay: .07s }
+.d2 { transition-delay: .15s }
+.d3 { transition-delay: .23s }
+.d4 { transition-delay: .31s }
+.d5 { transition-delay: .39s }
+
+/* ---- Nav scroll effect ---- */
+nav { transition: box-shadow .3s ease; }
+nav.is-scrolled { box-shadow: 0 4px 22px rgba(0,0,0,.4); }
+
+/* Nav link underline animation */
+.nav-links a:not(.nav-cta) {
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: #C8960A;
+  transition: width .25s ease;
+}
+.nav-links a:not(.nav-cta):hover::after,
+.nav-links a:not(.nav-cta).active::after { width: 100%; }
+
+/* ---- Mobile menu overlay ---- */
+.mob-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.52);
+  z-index: 97;
+  cursor: pointer;
+  animation: overlayIn .2s ease;
+}
+.mob-overlay.show { display: block; }
+@keyframes overlayIn { from { opacity: 0 } to { opacity: 1 } }
+
+/* ---- Hero entrance ---- */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-anim-1 { animation: slideUp .75s cubic-bezier(.22,1,.36,1) .05s both; }
+.hero-anim-2 { animation: slideUp .75s cubic-bezier(.22,1,.36,1) .18s both; }
+.hero-anim-3 { animation: slideUp .75s cubic-bezier(.22,1,.36,1) .30s both; }
+.hero-anim-4 { animation: slideUp .75s cubic-bezier(.22,1,.36,1) .42s both; }
+
+/* ---- Card hover lift ---- */
+.fc, .sv, .phil-item, .point-card {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.fc:hover, .sv:hover, .phil-item:hover, .point-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.10);
+}
+.hsc {
+  transition: border-color .2s, background .2s;
+}
+.hsc:hover {
+  border-color: #C8960A;
+  background: #152b4a;
+}
+
+/* ---- Service image zoom ---- */
+.sv-visual { overflow: hidden; }
+.sv-visual img { transition: transform .55s ease; }
+.sv-block:hover .sv-visual img { transform: scale(1.05); }
+
+/* ---- Info card hover ---- */
+.info-card {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.07);
+}
+
+/* ---- FAQ smooth accordion ---- */
+.faq-a {
+  display: block !important;
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-top: none !important;
+  transition: max-height .38s ease, padding .25s ease;
+}
+.faq-item.open .faq-a {
+  max-height: 300px;
+  padding: 1rem 1.4rem 1.2rem !important;
+  border-top: 1px solid #E2E8F0 !important;
+}
+.faq-q { cursor: pointer; user-select: none; }
+.faq-q::after { transition: transform .25s ease; }
+.faq-item.open .faq-q::after { content: '－'; }
+
+/* ---- Form enhancements ---- */
+.form-group input, .form-group textarea, .form-group select {
+  transition: border-color .2s, box-shadow .2s;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  outline: none;
+  border-color: #0A1628;
+  box-shadow: 0 0 0 3px rgba(10,22,40,.09);
+}
+.form-group.err input, .form-group.err textarea, .form-group.err select {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220,38,38,.1);
+}
+.err-msg {
+  display: none;
+  font-size: .76rem;
+  color: #dc2626;
+  margin-top: 4px;
+}
+.form-group.err .err-msg { display: block; }
+
+.privacy-wrap.err { outline: 2px solid #dc2626; outline-offset: 3px; border-radius: 2px; }
+
+#form-success {
+  display: none;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
+  padding: 1.6rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 1rem;
+  border-radius: 2px;
+}
+
+/* ---- Button ripple ---- */
+.btn-gold, .nav-cta, .form-submit, .submit-btn {
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold::before, .nav-cta::before, .form-submit::before, .submit-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.07);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.btn-gold:hover::before, .nav-cta:hover::before,
+.form-submit:hover::before, .submit-btn:hover::before { opacity: 1; }
+
+/* ---- Flow step hover ---- */
+.flow-item, .fl-item {
+  transition: transform .2s ease;
+}
+.flow-item:hover .flow-num,
+.fl-item:hover .fl-num {
+  background: #C8960A;
+  color: #fff;
+  transition: background .2s, color .2s;
+}
+
+/* ---- History timeline ---- */
+.hl-item {
+  opacity: 0;
+  transform: translateX(-18px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.hl-item.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Page hero entrance ---- */
+.page-hero h1,
+.page-hero p,
+.page-hero .breadcrumb {
+  animation: slideUp .7s cubic-bezier(.22,1,.36,1) both;
+}
+.page-hero .breadcrumb { animation-delay: .05s; }
+.page-hero h1         { animation-delay: .15s; }
+.page-hero p          { animation-delay: .25s; }

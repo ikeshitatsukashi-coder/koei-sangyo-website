@@ -54,7 +54,8 @@ section{padding:4.5rem 3rem}
 
 /* Jobs */
 .jobs-section{background:#F8F9FB}
-.job-card{background:#fff;border:1px solid #E2E8F0;margin-bottom:1.5rem}
+.job-card{background:#fff;border:1px solid #E2E8F0;margin-bottom:1.5rem;transition:box-shadow .25s ease}
+.job-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.08)}
 .job-head{background:#0A1628;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
 .job-title{font-size:1rem;font-weight:700;color:#fff}
 .job-type{font-size:.75rem;font-weight:700;color:#C8960A;border:1px solid #C8960A;padding:3px 10px;letter-spacing:.04em}
@@ -68,14 +69,15 @@ section{padding:4.5rem 3rem}
 .flow-list{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2.5rem;position:relative}
 .flow-list::before{content:'';position:absolute;top:24px;left:12%;right:12%;height:2px;background:#E2E8F0;z-index:0}
 .fl-item{text-align:center;position:relative;z-index:1}
-.fl-num{width:48px;height:48px;background:#0A1628;color:#C8960A;font-size:.82rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem;border:2px solid #C8960A}
+.fl-num{width:48px;height:48px;background:#0A1628;color:#C8960A;font-size:.82rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem;border:2px solid #C8960A;transition:background .2s,color .2s}
+.fl-item:hover .fl-num{background:#C8960A;color:#fff}
 .fl-title{font-size:.85rem;font-weight:700;color:#0A1628;margin-bottom:.3rem}
 .fl-desc{font-size:.78rem;color:#64748B;line-height:1.5;padding:0 .3rem}
 
 .cta-band{background:#0A1628;padding:3.5rem 3rem;text-align:center}
 .cta-band h2{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.6rem}
 .cta-band p{color:#94A3B8;font-size:.92rem;margin-bottom:2rem}
-.btn-gold{display:inline-block;background:#C8960A;color:#fff;padding:13px 32px;font-size:14px;font-weight:700;letter-spacing:.06em}
+.btn-gold{display:inline-block;background:#C8960A;color:#fff;padding:13px 32px;font-size:14px;font-weight:700;letter-spacing:.06em;transition:background .2s}
 .btn-gold:hover{background:#A87808}
 
 footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
@@ -103,6 +105,7 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
   .job-table th{width:100px}
 }
 </style>
+<link rel="stylesheet" href="css/enhancements.css">
 </head>
 <body>
 <nav>
@@ -130,15 +133,15 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
 
 <!-- Message -->
 <div class="message-section">
-  <div class="message-inner">
+  <div class="message-inner reveal">
     <div class="msg-avatar">
       <div class="msg-avatar-icon">👤</div>
-      <div class="msg-avatar-name">代表取締役<br>〇〇 〇〇</div>
+      <div class="msg-avatar-name">代表取締役<br>中山 淳</div>
     </div>
     <div>
       <div class="msg-eyebrow"><span>Message</span></div>
-      <div class="msg-title">共に、姫路の物流を支えませんか。</div>
-      <div class="msg-text">港栄産業は、姫路の産業と暮らしを陰から支える物流会社です。私たちが目指しているのは、スタッフ一人ひとりが誇りを持って働ける職場。安全・誠実・貢献という理念のもと、長く活躍できる環境を整えています。未経験の方でも丁寧にサポートしますので、ぜひお気軽にご応募ください。</div>
+      <div class="msg-title">共に、姫路の現場を支えませんか。</div>
+      <div class="msg-text">港栄産業は、姫路の産業と暮らしを陰から支える業務請負会社です。私たちが目指しているのは、スタッフ一人ひとりが誇りを持って働ける職場。安全・誠実・貢献という理念のもと、長く活躍できる環境を整えています。未経験の方でも丁寧にサポートしますので、ぜひお気軽にご応募ください。</div>
     </div>
   </div>
 </div>
@@ -146,23 +149,23 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
 <!-- Working Points -->
 <section>
   <div class="inner">
-    <div class="eyebrow"><span>Why Join Us</span></div>
-    <h2 class="sec-title">港栄産業で働く魅力</h2>
+    <div class="eyebrow reveal"><span>Why Join Us</span></div>
+    <h2 class="sec-title reveal">港栄産業で働く魅力</h2>
     <div class="points-grid">
-      <div class="point-card">
+      <div class="point-card reveal d1">
         <div class="point-icon">🛡️</div>
         <div class="point-title">充実した福利厚生</div>
         <div class="point-desc">社会保険完備・各種手当・有給休暇制度など、安心して長く働ける環境を整えています。</div>
       </div>
-      <div class="point-card">
+      <div class="point-card reveal d2">
         <div class="point-icon">📚</div>
         <div class="point-title">充実の研修制度</div>
-        <div class="point-desc">未経験者でも安心。先輩ドライバーによる丁寧な指導と、定期的な安全研修を実施しています。</div>
+        <div class="point-desc">未経験者でも安心。先輩スタッフによる丁寧な指導と、定期的な安全研修を実施しています。</div>
       </div>
-      <div class="point-card">
+      <div class="point-card reveal d3">
         <div class="point-icon">📈</div>
         <div class="point-title">明確なキャリアパス</div>
-        <div class="point-desc">経験・資格に応じた昇給制度。大型免許取得支援など、スキルアップをサポートします。</div>
+        <div class="point-desc">経験・資格に応じた昇給制度。フォークリフト免許取得支援など、スキルアップをサポートします。</div>
       </div>
     </div>
   </div>
@@ -171,11 +174,11 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
 <!-- Jobs -->
 <section class="jobs-section">
   <div class="inner">
-    <div class="eyebrow"><span>Openings</span></div>
-    <h2 class="sec-title">募集職種</h2>
-    <p class="sec-sub" style="margin-bottom:2rem">現在、以下の職種を募集しています。</p>
+    <div class="eyebrow reveal"><span>Openings</span></div>
+    <h2 class="sec-title reveal">募集職種</h2>
+    <p class="sec-sub reveal" style="margin-bottom:2rem">現在、以下の職種を募集しています。</p>
 
-    <div class="job-card">
+    <div class="job-card reveal">
       <div class="job-head">
         <div class="job-title">工場・倉庫スタッフ（業務請負）</div>
         <div class="job-type">正社員</div>
@@ -193,7 +196,7 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
       </div>
     </div>
 
-    <div class="job-card">
+    <div class="job-card reveal">
       <div class="job-head">
         <div class="job-title">軽作業・一般作業スタッフ</div>
         <div class="job-type">正社員 / パート</div>
@@ -216,13 +219,13 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
 <!-- Flow -->
 <section>
   <div class="inner">
-    <div class="eyebrow"><span>Application Flow</span></div>
-    <h2 class="sec-title">応募から入社までの流れ</h2>
+    <div class="eyebrow reveal"><span>Application Flow</span></div>
+    <h2 class="sec-title reveal">応募から入社までの流れ</h2>
     <div class="flow-list">
-      <div class="fl-item"><div class="fl-num">01</div><div class="fl-title">応募</div><div class="fl-desc">電話またはメールでご応募ください</div></div>
-      <div class="fl-item"><div class="fl-num">02</div><div class="fl-title">書類選考</div><div class="fl-desc">履歴書・職務経歴書を審査（約1週間）</div></div>
-      <div class="fl-item"><div class="fl-num">03</div><div class="fl-title">面接</div><div class="fl-desc">担当者との面接（1〜2回）</div></div>
-      <div class="fl-item"><div class="fl-num">04</div><div class="fl-title">内定・入社</div><div class="fl-desc">条件確認後、入社日を決定します</div></div>
+      <div class="fl-item reveal d1"><div class="fl-num">01</div><div class="fl-title">応募</div><div class="fl-desc">電話またはメールでご応募ください</div></div>
+      <div class="fl-item reveal d2"><div class="fl-num">02</div><div class="fl-title">書類選考</div><div class="fl-desc">履歴書・職務経歴書を審査（約1週間）</div></div>
+      <div class="fl-item reveal d3"><div class="fl-num">03</div><div class="fl-title">面接</div><div class="fl-desc">担当者との面接（1〜2回）</div></div>
+      <div class="fl-item reveal d4"><div class="fl-num">04</div><div class="fl-title">内定・入社</div><div class="fl-desc">条件確認後、入社日を決定します</div></div>
     </div>
   </div>
 </section>
@@ -237,10 +240,6 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
   <div class="f-logo"><div class="f-bar"></div><span class="f-name">株式会社港栄産業</span></div>
   <div style="font-size:.8rem">© 2025 株式会社港栄産業. All rights reserved.</div>
 </footer>
-<script>
-const btn=document.getElementById('hamburger');
-const menu=document.getElementById('mobile-menu');
-btn.addEventListener('click',()=>{btn.classList.toggle('open');menu.classList.toggle('open');});
-</script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

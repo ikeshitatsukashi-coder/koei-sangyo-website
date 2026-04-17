@@ -15,7 +15,7 @@ nav{background:#0A1628;display:flex;align-items:center;justify-content:space-bet
 .nav-links{display:flex;gap:2rem;align-items:center}
 .nav-links a{font-size:13px;color:#CBD5E1;letter-spacing:.04em;transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:#C8960A}
-.nav-cta{background:#C8960A;color:#fff;padding:8px 20px;font-size:13px;font-weight:700;letter-spacing:.04em}
+.nav-cta{background:#C8960A;color:#fff;padding:8px 20px;font-size:13px;font-weight:700}
 
 .page-hero{background:#0A1628;padding:4rem 3rem 3.5rem;position:relative;overflow:hidden}
 .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C8960A,#E8B420,#C8960A)}
@@ -38,7 +38,8 @@ section{padding:4.5rem 3rem}
 .sv-block.reverse{direction:rtl}
 .sv-block.reverse>*{direction:ltr}
 .sv-visual{background:#0A1628;aspect-ratio:4/3;overflow:hidden}
-.sv-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.sv-visual img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease}
+.sv-block:hover .sv-visual img{transform:scale(1.05)}
 .sv-num{font-size:.75rem;font-weight:800;color:#C8960A;letter-spacing:.1em;margin-bottom:.8rem}
 .sv-line{width:24px;height:2px;background:#C8960A;margin-bottom:.8rem}
 .sv-title{font-size:1.4rem;font-weight:800;color:#0A1628;margin-bottom:.8rem}
@@ -53,7 +54,8 @@ section{padding:4.5rem 3rem}
 .flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:2.5rem;position:relative}
 .flow-grid::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:2px;background:#E2E8F0;z-index:0}
 .flow-item{text-align:center;position:relative;z-index:1}
-.flow-num{width:56px;height:56px;background:#0A1628;color:#C8960A;font-size:.85rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;border:2px solid #C8960A}
+.flow-num{width:56px;height:56px;background:#0A1628;color:#C8960A;font-size:.85rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;border:2px solid #C8960A;transition:background .2s,color .2s}
+.flow-item:hover .flow-num{background:#C8960A;color:#fff}
 .flow-title{font-size:.85rem;font-weight:700;color:#0A1628;margin-bottom:.4rem}
 .flow-desc{font-size:.78rem;color:#64748B;line-height:1.6;padding:0 .5rem}
 
@@ -87,6 +89,7 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
   section{padding:3rem 1.5rem}
 }
 </style>
+<link rel="stylesheet" href="css/enhancements.css">
 </head>
 <body>
 <nav>
@@ -114,7 +117,7 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
 
 <section>
   <div class="inner">
-    <div class="sv-block">
+    <div class="sv-block reveal">
       <div class="sv-visual"><img src="アウトソーシング.jpeg" alt="アウトソーシング"></div>
       <div>
         <div class="sv-num">SERVICE 01</div>
@@ -131,7 +134,7 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
       </div>
     </div>
 
-    <div class="sv-block reverse">
+    <div class="sv-block reverse reveal">
       <div class="sv-visual"><img src="工場・物流倉庫業務請負.jpeg" alt="工場・物流倉庫業務請負"></div>
       <div>
         <div class="sv-num">SERVICE 02</div>
@@ -148,7 +151,7 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
       </div>
     </div>
 
-    <div class="sv-block">
+    <div class="sv-block reveal">
       <div class="sv-visual"><img src="製造補助・倉庫内軽作業・一般作業.jpeg" alt="製造補助・倉庫内軽作業・一般作業"></div>
       <div>
         <div class="sv-num">SERVICE 03</div>
@@ -169,22 +172,42 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
 
 <section class="flow-section">
   <div class="inner">
-    <div class="eyebrow"><span>Flow</span></div>
-    <h2 class="sec-title">ご依頼の流れ</h2>
-    <p class="sec-sub">お問い合わせから配送完了まで、スムーズにご対応します。</p>
+    <div class="eyebrow reveal"><span>Flow</span></div>
+    <h2 class="sec-title reveal">ご依頼の流れ</h2>
+    <p class="sec-sub reveal">お問い合わせからご契約まで、スムーズにご対応します。</p>
     <div class="flow-grid">
-      <div class="flow-item"><div class="flow-num">01</div><div class="flow-title">お問い合わせ</div><div class="flow-desc">電話・メールにてお気軽にご連絡ください</div></div>
-      <div class="flow-item"><div class="flow-num">02</div><div class="flow-title">ヒアリング</div><div class="flow-desc">輸送内容・日程・荷物の詳細をお聞きします</div></div>
-      <div class="flow-item"><div class="flow-num">03</div><div class="flow-title">お見積もり</div><div class="flow-desc">最適なプランと費用をご提案します</div></div>
-      <div class="flow-item"><div class="flow-num">04</div><div class="flow-title">輸送実施</div><div class="flow-desc">安全・確実に荷物をお届けします</div></div>
-      <div class="flow-item"><div class="flow-num">05</div><div class="flow-title">完了・報告</div><div class="flow-desc">配送完了をご報告。継続のご相談も承ります</div></div>
+      <div class="flow-item reveal d1">
+        <div class="flow-num">01</div>
+        <div class="flow-title">お問い合わせ</div>
+        <div class="flow-desc">電話・メールにてお気軽にご連絡ください</div>
+      </div>
+      <div class="flow-item reveal d2">
+        <div class="flow-num">02</div>
+        <div class="flow-title">ヒアリング</div>
+        <div class="flow-desc">業務内容・日程・必要人員の詳細をお聞きします</div>
+      </div>
+      <div class="flow-item reveal d3">
+        <div class="flow-num">03</div>
+        <div class="flow-title">お見積もり</div>
+        <div class="flow-desc">最適なプランと費用をご提案します</div>
+      </div>
+      <div class="flow-item reveal d4">
+        <div class="flow-num">04</div>
+        <div class="flow-title">業務開始</div>
+        <div class="flow-desc">安全・確実に業務を実施します</div>
+      </div>
+      <div class="flow-item reveal d5">
+        <div class="flow-num">05</div>
+        <div class="flow-title">完了・報告</div>
+        <div class="flow-desc">業務完了をご報告。継続のご相談も承ります</div>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="cta-band">
   <h2>まずはお気軽にご相談ください</h2>
-  <p>輸送に関するご質問・お見積もりは無料です。専任スタッフが丁寧にご対応いたします。</p>
+  <p>業務に関するご質問・お見積もりは無料です。専任スタッフが丁寧にご対応いたします。</p>
   <a href="contact.html" class="btn-gold">お問い合わせ・お見積もり</a>
 </div>
 
@@ -192,10 +215,6 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
   <div class="f-logo"><div class="f-bar"></div><span class="f-name">株式会社港栄産業</span></div>
   <div style="font-size:.8rem">© 2025 株式会社港栄産業. All rights reserved.</div>
 </footer>
-<script>
-const btn=document.getElementById('hamburger');
-const menu=document.getElementById('mobile-menu');
-btn.addEventListener('click',()=>{btn.classList.toggle('open');menu.classList.toggle('open');});
-</script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

@@ -49,13 +49,12 @@ nav{background:#0A1628;display:flex;align-items:center;justify-content:space-bet
 .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
 .form-group label{font-size:.82rem;font-weight:700;color:#334155;letter-spacing:.03em}
 .form-group label .req{color:#C8960A;margin-left:4px;font-size:.75rem}
-.form-group input,.form-group select,.form-group textarea{padding:11px 14px;border:1px solid #CBD5E1;font-size:.9rem;font-family:inherit;color:#1a1a1a;background:#FAFAFA;transition:border-color .2s}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:#0A1628;background:#fff}
+.form-group input,.form-group select,.form-group textarea{padding:11px 14px;border:1px solid #CBD5E1;font-size:.9rem;font-family:inherit;color:#1a1a1a;background:#FAFAFA;transition:border-color .2s;border-radius:0}
 .form-group textarea{height:130px;resize:vertical}
 .form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748B' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
-.privacy-check{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:#334155;margin:1rem 0}
-.privacy-check input{margin-top:3px;accent-color:#C8960A}
-.privacy-check a{color:#C8960A;border-bottom:1px solid #C8960A}
+.privacy-wrap{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:#334155;margin:1rem 0;padding:4px;border-radius:2px;transition:outline .2s}
+.privacy-wrap input{margin-top:3px;accent-color:#C8960A}
+.privacy-wrap a{color:#C8960A;border-bottom:1px solid #C8960A}
 .submit-btn{width:100%;background:#0A1628;color:#fff;padding:14px;font-size:1rem;font-weight:700;letter-spacing:.08em;cursor:pointer;border:none;transition:background .2s;margin-top:.5rem}
 .submit-btn:hover{background:#C8960A}
 
@@ -65,9 +64,7 @@ nav{background:#0A1628;display:flex;align-items:center;justify-content:space-bet
 .faq-item{border:1px solid #E2E8F0;cursor:pointer}
 .faq-q{padding:1.1rem 1.4rem;display:flex;justify-content:space-between;align-items:center;font-size:.95rem;font-weight:700;color:#0A1628;background:#fff}
 .faq-q::after{content:'＋';color:#C8960A;font-size:1.2rem;font-weight:400;flex-shrink:0;margin-left:1rem}
-.faq-item.open .faq-q::after{content:'－'}
-.faq-a{display:none;padding:1rem 1.4rem 1.2rem;font-size:.88rem;color:#64748B;line-height:1.8;background:#F8F9FB;border-top:1px solid #E2E8F0}
-.faq-item.open .faq-a{display:block}
+.faq-a{padding:1rem 1.4rem 1.2rem;font-size:.88rem;color:#64748B;line-height:1.8;background:#F8F9FB;border-top:1px solid #E2E8F0}
 
 footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .f-logo{display:flex;align-items:center;gap:10px}
@@ -91,6 +88,7 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
   .contact-section,.faq-section{padding:3rem 1.5rem}
 }
 </style>
+<link rel="stylesheet" href="css/enhancements.css">
 </head>
 <body>
 <nav>
@@ -113,72 +111,82 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
 <div class="page-hero">
   <div class="breadcrumb"><a href="index.html">ホーム</a><span>›</span>お問い合わせ</div>
   <h1>お問い合わせ</h1>
-  <p>輸送のご依頼・お見積もり・採用に関するご質問など、お気軽にご連絡ください。</p>
+  <p>業務のご依頼・お見積もり・採用に関するご質問など、お気軽にご連絡ください。</p>
 </div>
 
 <div class="contact-section">
   <div class="inner">
     <div class="contact-grid">
       <div class="info-cards">
-        <div class="info-card">
+        <div class="info-card reveal d1">
           <div class="ic-label">Phone</div>
           <div class="ic-main">079-237-0498</div>
           <div class="ic-sub">受付時間：月〜土 8:00〜18:00</div>
           <div class="ic-desc">お急ぎの場合はお電話が便利です。専任スタッフが対応します。</div>
         </div>
-        <div class="info-card">
+        <div class="info-card reveal d2">
           <div class="ic-label">FAX</div>
           <div class="ic-main">079-237-5008</div>
           <div class="ic-sub">24時間受付</div>
         </div>
-        <div class="info-card">
+        <div class="info-card reveal d3">
           <div class="ic-label">Address</div>
           <div class="ic-main" style="font-size:1rem">〒671-1136</div>
           <div class="ic-desc">姫路市大津区恵美酒町二丁目75番地1</div>
         </div>
       </div>
 
-      <div class="form-card">
+      <div class="form-card reveal">
         <h3>メールでのお問い合わせ</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label>お名前<span class="req">必須</span></label>
-            <input type="text" placeholder="山田 太郎">
+        <form id="contact-form">
+          <div class="form-row">
+            <div class="form-group" data-required>
+              <label>お名前<span class="req">必須</span></label>
+              <input type="text" placeholder="山田 太郎">
+              <div class="err-msg">お名前を入力してください</div>
+            </div>
+            <div class="form-group">
+              <label>会社名</label>
+              <input type="text" placeholder="株式会社〇〇">
+            </div>
           </div>
-          <div class="form-group">
-            <label>会社名</label>
-            <input type="text" placeholder="株式会社〇〇">
+          <div class="form-row">
+            <div class="form-group" data-required>
+              <label>メールアドレス<span class="req">必須</span></label>
+              <input type="email" placeholder="example@mail.com">
+              <div class="err-msg">正しいメールアドレスを入力してください</div>
+            </div>
+            <div class="form-group">
+              <label>電話番号</label>
+              <input type="tel" placeholder="079-XXX-XXXX">
+            </div>
           </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>メールアドレス<span class="req">必須</span></label>
-            <input type="email" placeholder="example@mail.com">
+          <div class="form-group" data-required>
+            <label>お問い合わせ種別<span class="req">必須</span></label>
+            <select>
+              <option value="">選択してください</option>
+              <option>業務のご依頼・お見積もり</option>
+              <option>アウトソーシングに関するご質問</option>
+              <option>業務請負に関するご質問</option>
+              <option>採用に関するご質問</option>
+              <option>その他</option>
+            </select>
+            <div class="err-msg">種別を選択してください</div>
           </div>
-          <div class="form-group">
-            <label>電話番号</label>
-            <input type="tel" placeholder="079-XXX-XXXX">
+          <div class="form-group" data-required>
+            <label>お問い合わせ内容<span class="req">必須</span></label>
+            <textarea placeholder="お問い合わせ内容をご記入ください。&#10;（例：業務内容・必要人員・ご希望の対応期間など）"></textarea>
+            <div class="err-msg">お問い合わせ内容を入力してください</div>
           </div>
+          <div class="privacy-wrap" id="privacy-wrap">
+            <input type="checkbox" id="privacy">
+            <label for="privacy"><a href="#">プライバシーポリシー</a>に同意の上、送信します。</label>
+          </div>
+          <button type="submit" class="submit-btn">送　信</button>
+        </form>
+        <div id="form-success">
+          ✅ お問い合わせを受け付けました。<br>担当者より折り返しご連絡いたします。
         </div>
-        <div class="form-group">
-          <label>お問い合わせ種別<span class="req">必須</span></label>
-          <select>
-            <option value="">選択してください</option>
-            <option>輸送のご依頼・お見積もり</option>
-            <option>サービスに関するご質問</option>
-            <option>採用に関するご質問</option>
-            <option>その他</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>お問い合わせ内容<span class="req">必須</span></label>
-          <textarea placeholder="お問い合わせ内容をご記入ください。&#10;（例：輸送区間、荷物の種類・量、希望日時など）"></textarea>
-        </div>
-        <div class="privacy-check">
-          <input type="checkbox" id="privacy">
-          <label for="privacy"><a href="#">プライバシーポリシー</a>に同意の上、送信します。</label>
-        </div>
-        <button class="submit-btn">送　信</button>
       </div>
     </div>
   </div>
@@ -187,27 +195,27 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
 <!-- FAQ -->
 <section class="faq-section">
   <div class="inner" style="max-width:960px">
-    <div class="eyebrow"><span>FAQ</span></div>
-    <h2 class="sec-title">よくあるご質問</h2>
+    <div class="eyebrow reveal"><span>FAQ</span></div>
+    <h2 class="sec-title reveal">よくあるご質問</h2>
   </div>
   <div class="faq-list">
-    <div class="faq-item">
+    <div class="faq-item reveal d1">
       <div class="faq-q">対応エリアを教えてください。</div>
-      <div class="faq-a">姫路市内・近畿圏を中心に、全国各地への輸送に対応しています。詳しくはお電話またはメールにてお問い合わせください。</div>
+      <div class="faq-a">姫路市内・近畿圏を中心に、全国各地への対応が可能です。詳しくはお電話またはメールにてお問い合わせください。</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">急な輸送依頼にも対応できますか？</div>
-      <div class="faq-a">はい、スポット便・緊急輸送にも対応しています。まずはお電話にてご相談ください。車両の空き状況を確認の上、迅速にご対応いたします。</div>
+    <div class="faq-item reveal d2">
+      <div class="faq-q">急な業務依頼にも対応できますか？</div>
+      <div class="faq-a">はい、スポット対応・緊急依頼にも対応しています。まずはお電話にてご相談ください。スタッフの状況を確認の上、迅速にご対応いたします。</div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item reveal d3">
       <div class="faq-q">見積もりは無料ですか？</div>
-      <div class="faq-a">はい、お見積もりは無料です。輸送区間・荷物の種類・量・日程などをお知らせいただければ、最適なプランをご提案します。</div>
+      <div class="faq-a">はい、お見積もりは無料です。業務内容・必要人員・期間などをお知らせいただければ、最適なプランをご提案します。</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">定期輸送の契約はできますか？</div>
-      <div class="faq-a">はい、長期・定期輸送契約を多数承っております。製造業・工場向けの定期便も対応しております。ご要望に応じてお気軽にご相談ください。</div>
+    <div class="faq-item reveal d4">
+      <div class="faq-q">長期・定期の業務契約はできますか？</div>
+      <div class="faq-a">はい、長期・定期の業務請負契約を多数承っております。製造業・工場向けの継続対応も可能です。ご要望に応じてお気軽にご相談ください。</div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item reveal d5">
       <div class="faq-q">採用に関する問い合わせもこちらから？</div>
       <div class="faq-a">はい、採用に関するご質問・ご応募もこちらのフォームまたはお電話にて受け付けております。お問い合わせ種別で「採用に関するご質問」をお選びください。</div>
     </div>
@@ -218,18 +226,6 @@ footer{background:#060F1E;color:#475569;padding:2rem 3rem;display:flex;justify-c
   <div class="f-logo"><div class="f-bar"></div><span class="f-name">株式会社港栄産業</span></div>
   <div style="font-size:.8rem">© 2025 株式会社港栄産業. All rights reserved.</div>
 </footer>
-
-<script>
-document.querySelectorAll('.faq-item').forEach(item=>{
-  item.querySelector('.faq-q').addEventListener('click',()=>{
-    item.classList.toggle('open');
-  });
-});
-</script>
-<script>
-const btn=document.getElementById('hamburger');
-const menu=document.getElementById('mobile-menu');
-btn.addEventListener('click',()=>{btn.classList.toggle('open');menu.classList.toggle('open');});
-</script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

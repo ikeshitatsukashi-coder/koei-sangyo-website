@@ -34,13 +34,13 @@ nav{position:sticky;top:0;z-index:100;background:#0A1628;display:flex;align-item
 .hero h1 em{color:#C8960A;font-style:normal}
 .hero-desc{font-size:.95rem;color:#94A3B8;line-height:1.9;margin-bottom:2rem}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-gold{background:#C8960A;color:#fff;padding:13px 28px;font-size:14px;font-weight:700;letter-spacing:.06em;border:none;cursor:pointer;transition:background .2s}
+.btn-gold{background:#C8960A;color:#fff;padding:13px 28px;font-size:14px;font-weight:700;letter-spacing:.06em;border:none;cursor:pointer;transition:background .2s;display:inline-block}
 .btn-gold:hover{background:#A87808}
-.btn-ghost{border:1px solid #475569;color:#CBD5E1;padding:12px 28px;font-size:14px;letter-spacing:.04em;transition:border-color .2s,color .2s}
+.btn-ghost{border:1px solid #475569;color:#CBD5E1;padding:12px 28px;font-size:14px;letter-spacing:.04em;transition:border-color .2s,color .2s;display:inline-block}
 .btn-ghost:hover{border-color:#CBD5E1;color:#fff}
 .hero-visual{display:flex;flex-direction:column;gap:12px}
 .hero-stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.hsc{background:#112240;border:1px solid #1E3A5F;padding:1.2rem;border-left:3px solid #C8960A}
+.hsc{background:#112240;border:1px solid #1E3A5F;padding:1.2rem;border-left:3px solid #C8960A;cursor:default}
 .hsc-num{font-size:1.8rem;font-weight:800;color:#fff;line-height:1}
 .hsc-unit{font-size:.75rem;color:#C8960A;font-weight:700;margin-left:3px}
 .hsc-label{font-size:.78rem;color:#64748B;margin-top:4px;letter-spacing:.04em}
@@ -48,14 +48,6 @@ nav{position:sticky;top:0;z-index:100;background:#0A1628;display:flex;align-item
 .hbr-icon{width:36px;height:36px;background:#C8960A;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .hbr-text{font-size:.85rem;color:#94A3B8;line-height:1.5}
 .hbr-text strong{color:#fff;display:block;font-size:.9rem}
-
-/* VIDEO */
-.video-section{background:#060F1E;padding:0}
-.video-wrapper{position:relative;width:100%;aspect-ratio:16/9;background:#0A1628;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.video-wrapper video{width:100%;height:100%;object-fit:cover;display:block}
-.video-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:#475569;pointer-events:none}
-.video-placeholder .vp-icon{width:72px;height:72px;border:2px solid #1E3A5F;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px}
-.video-placeholder p{font-size:.85rem;letter-spacing:.08em}
 
 /* DIVIDER */
 .divider-bar{height:4px;background:#0A1628}
@@ -120,8 +112,7 @@ section{padding:5rem 3rem}
 .contact-tel-sub{font-size:.82rem;color:#94A3B8}
 .contact-divider{width:40px;height:2px;background:#C8960A;margin:1.5rem 0}
 .form-group{display:flex;flex-direction:column;gap:10px}
-.form-group input,.form-group textarea{padding:11px 14px;border:1px solid #CBD5E1;font-size:.9rem;font-family:inherit;color:#1a1a1a;background:#fff;transition:border-color .2s;border-radius:0}
-.form-group input:focus,.form-group textarea:focus{outline:none;border-color:#0A1628}
+.form-group input,.form-group textarea{padding:11px 14px;border:1px solid #CBD5E1;font-size:.9rem;font-family:inherit;color:#1a1a1a;background:#fff;border-radius:0}
 .form-group textarea{height:110px;resize:vertical}
 .form-submit{background:#0A1628;color:#fff;padding:13px;font-size:.95rem;font-weight:700;letter-spacing:.06em;cursor:pointer;border:none;width:100%;transition:background .2s}
 .form-submit:hover{background:#C8960A}
@@ -154,6 +145,7 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
   section{padding:3.5rem 1.5rem}
 }
 </style>
+<link rel="stylesheet" href="css/enhancements.css">
 </head>
 <body>
 
@@ -186,36 +178,36 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
   <div class="hero-stripe"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow"><span>Logistics &amp; Transportation</span></div>
-      <h1>現場の<em>信頼</em>を、<br>姫路から全国へ。</h1>
-      <p class="hero-desc">港栄産業は、兵庫県姫路市を拠点とするアウトソーシング・業務請負企業です。私たちは、誠実に対応いたします。</p>
-      <div class="hero-btns">
+      <div class="hero-eyebrow hero-anim-1"><span>Outsourcing &amp; Operations</span></div>
+      <h1 class="hero-anim-2">現場の<em>信頼</em>を、<br>姫路から全国へ。</h1>
+      <p class="hero-desc hero-anim-3">港栄産業は、兵庫県姫路市を拠点とするアウトソーシング・業務請負企業です。私たちは、誠実に対応いたします。</p>
+      <div class="hero-btns hero-anim-4">
         <a href="contact.html" class="btn-gold">お問い合わせ・お見積もり</a>
         <a href="service.html" class="btn-ghost">サービス一覧</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="hero-stat-cards">
-        <div class="hsc">
+        <div class="hsc reveal d1">
           <div><span class="hsc-num">24</span><span class="hsc-unit">H</span></div>
           <div class="hsc-label">柔軟な対応体制</div>
         </div>
-        <div class="hsc">
+        <div class="hsc reveal d2">
           <div><span class="hsc-num">全国</span></div>
           <div class="hsc-label">配送ネットワーク</div>
         </div>
-        <div class="hsc">
+        <div class="hsc reveal d3">
           <div><span class="hsc-num">姫路</span></div>
           <div class="hsc-label">地域密着の拠点</div>
         </div>
-        <div class="hsc">
+        <div class="hsc reveal d4">
           <div><span class="hsc-num">安全</span><span class="hsc-unit">第一</span></div>
           <div class="hsc-label">徹底した運行管理</div>
         </div>
       </div>
-      <div class="hero-badge-row">
+      <div class="hero-badge-row reveal d5">
         <div class="hbr-icon">🛡️</div>
-        <div class="hbr-text"><strong>認定・安全管理体制</strong>厳格な安全基準のもと、毎日の運行を管理しています。</div>
+        <div class="hbr-text"><strong>認定・安全管理体制</strong>厳格な安全基準のもと、日々の業務を管理しています。</div>
       </div>
     </div>
   </div>
@@ -224,19 +216,19 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
 <!-- NUMBERS BAND -->
 <div class="numbers-band">
   <div class="numbers-inner">
-    <div class="nb-item">
+    <div class="nb-item reveal d1">
       <div><span class="nb-num">近畿</span></div>
       <div class="nb-label">〜全国 対応エリア</div>
     </div>
-    <div class="nb-item">
-      <div><span class="nb-num">3</span><span class="nb-unit">種別</span></div>
-      <div class="nb-label">大・中・小型 車両対応</div>
+    <div class="nb-item reveal d2">
+      <div><span class="nb-num" data-count="3">3</span><span class="nb-unit">種別</span></div>
+      <div class="nb-label">アウトソーシング・請負・軽作業</div>
     </div>
-    <div class="nb-item">
-      <div><span class="nb-num">365</span><span class="nb-unit">日</span></div>
-      <div class="nb-label">年間稼働・安定輸送</div>
+    <div class="nb-item reveal d3">
+      <div><span class="nb-num" data-count="365">365</span><span class="nb-unit">日</span></div>
+      <div class="nb-label">年間稼働・安定対応</div>
     </div>
-    <div class="nb-item">
+    <div class="nb-item reveal d4">
       <div><span class="nb-num">0</span><span class="nb-unit">を目指す</span></div>
       <div class="nb-label">事故・クレーム件数</div>
     </div>
@@ -246,33 +238,33 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
 <!-- FEATURES -->
 <section class="features" id="features">
   <div class="inner">
-    <div class="section-eyebrow"><span>Our Strengths</span></div>
-    <h2 class="section-title">港栄産業の強み</h2>
-    <p class="section-sub">長年の実績と地域への深い理解をもとに、お客様のロジスティクス課題を解決します。</p>
+    <div class="section-eyebrow reveal"><span>Our Strengths</span></div>
+    <h2 class="section-title reveal">港栄産業の強み</h2>
+    <p class="section-sub reveal">長年の実績と地域への深い理解をもとに、お客様の業務課題を解決します。</p>
     <div class="features-grid">
-      <div class="fc">
+      <div class="fc reveal d1">
         <div class="fc-num">01</div>
         <div class="fc-line"></div>
         <div class="fc-title">地域密着の対応力</div>
-        <div class="fc-desc">姫路市内の道路・産業エリアを熟知し、迅速かつ的確なルート選定を実現します。</div>
+        <div class="fc-desc">姫路市内の産業エリアを熟知し、迅速かつ的確な人員配置・業務対応を実現します。</div>
       </div>
-      <div class="fc">
+      <div class="fc reveal d2">
         <div class="fc-num">02</div>
         <div class="fc-line"></div>
         <div class="fc-title">徹底した安全管理</div>
-        <div class="fc-desc">定期点検・ドライバー教育を継続し、安全第一の輸送体制を維持しています。</div>
+        <div class="fc-desc">定期研修・スタッフ教育を継続し、安全第一の業務体制を維持しています。</div>
       </div>
-      <div class="fc">
+      <div class="fc reveal d3">
         <div class="fc-num">03</div>
         <div class="fc-line"></div>
         <div class="fc-title">柔軟なスケジュール対応</div>
-        <div class="fc-desc">急なスポット依頼や時間指定配送にも、機動力を活かして対応します。</div>
+        <div class="fc-desc">急な依頼やスポット対応にも、機動力を活かして迅速に対応します。</div>
       </div>
-      <div class="fc">
+      <div class="fc reveal d4">
         <div class="fc-num">04</div>
         <div class="fc-line"></div>
-        <div class="fc-title">産業物流への専門知識</div>
-        <div class="fc-desc">製造業・工場向けの定期輸送を多数担当。特殊ニーズにもご対応します。</div>
+        <div class="fc-title">産業現場への専門知識</div>
+        <div class="fc-desc">製造業・工場向けの業務請負を多数担当。特殊ニーズにもご対応します。</div>
       </div>
     </div>
   </div>
@@ -281,11 +273,11 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="inner">
-    <div class="section-eyebrow"><span>Services</span></div>
-    <h2 class="section-title">サービス内容</h2>
-    <p class="section-sub">お客様のニーズに合わせた多様な輸送ソリューションをご提供します。</p>
+    <div class="section-eyebrow reveal"><span>Services</span></div>
+    <h2 class="section-title reveal">サービス内容</h2>
+    <p class="section-sub reveal">お客様のニーズに合わせた多様な業務ソリューションをご提供します。</p>
     <div class="services-grid">
-      <div class="sv">
+      <div class="sv reveal d1">
         <div class="sv-head">
           <div class="sv-icon">🏢</div>
           <div class="sv-name">アウトソーシング</div>
@@ -293,7 +285,7 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
         <div class="sv-desc">お客様の業務を丸ごとお引き受けします。コスト削減・効率化を実現し、コア業務へ集中できる環境をご提供します。</div>
         <div class="sv-tag">業務委託 / コスト削減</div>
       </div>
-      <div class="sv">
+      <div class="sv reveal d2">
         <div class="sv-head">
           <div class="sv-icon">🏭</div>
           <div class="sv-name">工場・物流倉庫業務請負</div>
@@ -301,7 +293,7 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
         <div class="sv-desc">工場内作業・物流倉庫内の業務を一括請負。現場のニーズに合わせた人員配置と安定した品質管理で対応します。</div>
         <div class="sv-tag">工場内作業 / 倉庫業務</div>
       </div>
-      <div class="sv">
+      <div class="sv reveal d3">
         <div class="sv-head">
           <div class="sv-icon">⚙️</div>
           <div class="sv-name">製造補助・倉庫内軽作業</div>
@@ -316,7 +308,7 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-inner">
-    <div>
+    <div class="reveal-left">
       <div class="section-eyebrow"><span>About Us</span></div>
       <h2 class="section-title">私たちについて</h2>
       <p class="about-desc">港栄産業は、兵庫県姫路市を拠点に工場・物流倉庫の業務請負・アウトソーシングを手がける会社です。私たちは、誠実に対応いたします。</p>
@@ -327,7 +319,7 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
         <div class="al-item"><div class="al-dot"></div><div class="al-text">専任担当制によるきめ細かいサポート体制</div></div>
       </div>
     </div>
-    <div>
+    <div class="reveal-right">
       <div class="about-table">
         <div class="at-row"><div class="at-th">会社名</div><div class="at-td">株式会社港栄産業</div></div>
         <div class="at-row"><div class="at-th">所在地</div><div class="at-td">〒671-1136 姫路市大津区恵美酒町二丁目75番地1</div></div>
@@ -342,22 +334,22 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner">
-    <div class="contact-info">
+    <div class="contact-info reveal-left">
       <div class="section-eyebrow"><span>Contact</span></div>
       <h2 class="section-title">お問い合わせ</h2>
-      <p class="section-sub" style="margin-top:.5rem">お見積もり・輸送のご相談はお気軽にどうぞ。専任スタッフが丁寧にご対応いたします。</p>
+      <p class="section-sub" style="margin-top:.5rem">お見積もり・業務のご相談はお気軽にどうぞ。専任スタッフが丁寧にご対応いたします。</p>
       <div class="contact-divider"></div>
       <p style="font-size:.82rem;color:#94A3B8">お電話でのご連絡</p>
       <div class="contact-tel">079-237-0498</div>
       <div class="contact-tel-sub">受付時間 月〜土 8:00〜18:00</div>
     </div>
-    <div>
+    <div class="reveal-right">
       <div class="form-group">
         <input type="text" placeholder="会社名・お名前">
         <input type="email" placeholder="メールアドレス">
         <input type="text" placeholder="件名">
         <textarea placeholder="お問い合わせ内容"></textarea>
-        <button class="form-submit">送　信</button>
+        <a href="contact.html" class="form-submit" style="display:block;text-align:center;text-decoration:none;line-height:1">詳しいお問い合わせはこちら</a>
       </div>
     </div>
   </div>
@@ -372,10 +364,6 @@ footer{background:#060F1E;color:#475569;padding:2.5rem 3rem;display:flex;justify
   <div class="f-copy">© 2025 株式会社港栄産業. All rights reserved.</div>
 </footer>
 
-<script>
-const btn=document.getElementById('hamburger');
-const menu=document.getElementById('mobile-menu');
-btn.addEventListener('click',()=>{btn.classList.toggle('open');menu.classList.toggle('open');});
-</script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
